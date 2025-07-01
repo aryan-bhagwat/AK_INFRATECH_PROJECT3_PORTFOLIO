@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Bhagwat | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Portfolio website of Aryan Bhagwat - Web Developer and Designer">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>Aryan<span>Bhagwat</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello, I'm <span>Aryan Bhagwat</span></h1>
+                <h2>Web Developer & Designer</h2>
+                <p>I create responsive websites that are fast, easy to use, and built with best practices.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/aryan-bhagwat" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aryan-bhagwat/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:aryanbhagwat90@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <!-- Replace with your image -->
+                    <img src="https://via.placeholder.com/400" alt="Aryan Bhagwat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Replace with your image -->
+                    <img src="https://via.placeholder.com/400" alt="About Aryan Bhagwat">
+                </div>
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I am a passionate web developer with a strong foundation in HTML, CSS, and JavaScript. Currently, I'm participating in the AK Infratech Summer Internship 2025 program to enhance my skills and gain practical experience.</p>
+                    <p>I enjoy creating responsive, user-friendly websites and applications that solve real-world problems. My goal is to continue learning and growing as a developer while contributing to meaningful projects.</p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <h4>Name</h4>
+                                <p>Aryan Bhagwat</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>aryanbhagwat90@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Mumbai, India</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>B.Sc in Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Updated CV buttons container with both options -->
+                    <div class="cv-buttons-container">
+                        <a href="Aryan Bhagwat Resume.pdf" class="btn primary-btn" id="cv-button" target="_blank">
+                            <i class="fas fa-eye"></i> View CV
+                        </a>
+                        <a href="Aryan Bhagwat Resume.pdf" class="btn secondary-btn" id="cv-download-button" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>HTML5</h4>
+                                <p>90%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>CSS3</h4>
+                                <p>85%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>JavaScript</h4>
+                                <p>80%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>Responsive Design</h4>
+                                <p>85%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>Problem Solving</h4>
+                                <p>85%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>Teamwork</h4>
+                                <p>90%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>Communication</h4>
+                                <p>80%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <h4>Time Management</h4>
+                                <p>75%</p>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Web Calculator">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/aryan-bhagwat/AK_INFRATECH_PROJECT1_CALCULATOR" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Web Calculator</h3>
+                        <p>A web development calculator project involves creating a functional calculator interface using HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A personal portfolio website showcasing my projects and skills with responsive design.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400" alt="UI/UX Design">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>UI/UX Design Project</h3>
+                        <p>A modern user interface design for a mobile application with focus on user experience.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI/UX</span>
+                            <span>Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="other">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400" alt="HR Analytics Project">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/aryan-bhagwat/HR-Analytics-Project" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HR Analytics Project</h3>
+                        <p>An end-to-end HR analytics solution that applies machine learning to forecast and analyze employee attrition trends. The project integrates data analysis, predictive analytics, and automated reports to enable data-driven decisions by HR professionals for minimizing employee turnover.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Scikit-learn for Machine learning</span>
+                            <span>Pandas & Numpy for Data manipulation</span>
+                            <span>Matplotlib & Seaborn for Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Mumbai, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>aryanbhagwat90@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9702125256</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/aryan-bhagwat" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aryan-bhagwat/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:aryanbhagwat90@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm" action="https://formsubmit.co/legendasur531@gmail.com" method="POST">
+                        <!-- Honeypot to prevent spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Disable captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Specify template -->
+                        <input type="hidden" name="_template" value="table">
+                        <!-- Specify subject -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                        <!-- Auto-response -->
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting me. I will get back to you soon!">
+                        <!-- Update redirect URL -->
+                        <input type="hidden" name="_next" value="https://aryan-bhagwat.github.io/thanks.html">
+                        
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Aryan Bhagwat. All Rights Reserved.</p>
+                <p>Developed for AK Infratech Summer Internship 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
