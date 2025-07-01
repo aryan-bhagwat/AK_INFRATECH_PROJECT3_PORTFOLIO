@@ -1,26 +1,43 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize animations
-    initAnimations();
-    
-    // Setup navigation
+    // Defer non-critical operations
+    setTimeout(() => {
+        initAnimations();
+        setupProjectFilters();
+        setupCVButton();
+    }, 100);
+
+    // Critical operations
     setupNavigation();
-    
-    // Setup scroll to top button
     setupScrollToTop();
-    
-    // Setup project filtering
-    setupProjectFilters();
-    
-    // Setup form submission
     setupContactForm();
-    
-    // Setup CV button
-    setupCVButton();
-    
-    // Load theme preference
     loadTheme();
 });
+
+// Add throttle function for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Update scroll event listeners to use throttle
+function setupScrollToTop() {
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    window.addEventListener('scroll', throttle(() => {
+        if (window.scrollY > 500) {
+            scrollToTopBtn.classList.add('active');
+        } else {
+            scrollToTopBtn.classList.remove('active');
+        }
+    }, 100));
+}
 
 // Initialize animations for elements
 function initAnimations() {
@@ -130,10 +147,17 @@ function setupContactForm() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        // Remove the preventDefault to allow the form to submit
-        contactForm.addEventListener('submit', function() {
-            // Show success message
-            showFormMessage('Message sent successfully! Thank you for contacting me.', 'success');
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Re-enable button after submission (success or failure)
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message';
+                showFormMessage('Message sent successfully! Thank you for contacting me.', 'success');
+            }, 1000);
         });
     }
 }
@@ -160,73 +184,4 @@ function showFormMessage(message, type) {
     setTimeout(() => {
         messageElement.style.display = 'none';
     }, 3000);
-}
-
-// Toggle between light and dark theme
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    
-    // Save theme preference to local storage
-    const isDarkTheme = document.body.classList.contains('dark-theme');
-    localStorage.setItem('darkTheme', isDarkTheme);
-    
-    // Update theme toggle icon
-    const themeToggle = document.querySelector('.theme-toggle i');
-    if (themeToggle) {
-        themeToggle.className = isDarkTheme ? 'fas fa-sun' : 'fas fa-moon';
-    }
-}
-
-// Load theme preference from local storage
-function loadTheme() {
-    const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-    
-    if (isDarkTheme) {
-        document.body.classList.add('dark-theme');
-    }
-    
-    // Update theme toggle icon
-    const themeToggle = document.querySelector('.theme-toggle i');
-    if (themeToggle) {
-        themeToggle.className = isDarkTheme ? 'fas fa-sun' : 'fas fa-moon';
-    }
-}
-
-// After the setupContactForm function, add this:
-// Setup CV button functionality
-function setupCVButton() {
-    const cvButton = document.getElementById('cv-button');
-    const cvDownloadButton = document.getElementById('cv-download-button');
-    
-    if (cvButton) {
-        // Set up the view button
-        cvButton.setAttribute('href', 'Aryan Bhagwat Resume.pdf');
-        cvButton.setAttribute('target', '_blank');
-        
-        // Add click event to handle potential errors for view button
-        cvButton.addEventListener('click', function(e) {
-            // If the file doesn't exist, prevent default and show a message
-            fetch(cvButton.getAttribute('href'))
-                .catch(function() {
-                    e.preventDefault();
-                    alert('The CV file is currently unavailable. Please try again later.');
-                });
-        });
-    }
-    
-    if (cvDownloadButton) {
-        // Set up the download button
-        cvDownloadButton.setAttribute('href', 'Aryan Bhagwat Resume.pdf');
-        cvDownloadButton.setAttribute('download', 'Aryan_Bhagwat_Resume.pdf');
-        
-        // Add click event to handle potential errors for download button
-        cvDownloadButton.addEventListener('click', function(e) {
-            // If the file doesn't exist, prevent default and show a message
-            fetch(cvDownloadButton.getAttribute('href'))
-                .catch(function() {
-                    e.preventDefault();
-                    alert('The CV file is currently unavailable for download. Please try again later.');
-                });
-        });
-    }
 }
