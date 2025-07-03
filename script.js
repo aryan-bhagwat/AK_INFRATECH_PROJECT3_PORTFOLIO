@@ -152,12 +152,11 @@ function setupContactForm() {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
-            // Re-enable button after submission (success or failure)
+            // Form will be handled by Formspree
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Send Message';
-                showFormMessage('Message sent successfully! Thank you for contacting me.', 'success');
-            }, 1000);
+            }, 2000);
         });
     }
 }
